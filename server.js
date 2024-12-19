@@ -23,7 +23,7 @@ app.get('/test-connection', async (req, res) => {
 
 
 
-app.post("/api/employees", async (req, res) => {
+app.post("https://fsdbackend-o5ge.onrender.com/api/employees", async (req, res) => {
   const { name, email, phoneNumber, department, dateOfJoining, role } = req.body;
 
   if (!name || !email || !phoneNumber || !department || !dateOfJoining || !role) {
@@ -63,7 +63,7 @@ app.post("/api/employees", async (req, res) => {
   }
 });
 
-app.get('/api/employees', async (req, res) => {
+app.get('https://fsdbackend-o5ge.onrender.com/api/employees', async (req, res) => {
   try {
     const employees = await prisma.employee.findMany();
     res.json(employees);
