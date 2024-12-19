@@ -3,10 +3,10 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const validator = require('validator');
 require('dotenv').config();
-const { PrismaClient } = require('@prisma/client');  // Import Prisma Client
+const { PrismaClient } = require('@prisma/client');  
 
 const app = express();
-const prisma = new PrismaClient();  // Initialize Prisma Client
+const prisma = new PrismaClient(); 
 
 app.use(cors());
 app.use(bodyParser.json());
