@@ -11,6 +11,18 @@ const prisma = new PrismaClient();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.get('/test-connection', async (req, res) => {
+  try {
+    await prisma.$connect();
+    res.status(200).send('Database connected successfully');
+  } catch (err) {
+    console.error('Database connection error:', err);
+    res.status(500).send('Failed to connect to database');
+  }
+});
+
+
+
 app.post("/api/employees", async (req, res) => {
   const { name, email, phoneNumber, department, dateOfJoining, role } = req.body;
 
